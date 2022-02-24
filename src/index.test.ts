@@ -5,6 +5,8 @@ import def, {
   foundationQueries,
   mantine,
   mantineQueries,
+  pico,
+  picoQueries,
 } from './';
 
 test('default export', () => {
@@ -20,12 +22,17 @@ test('foundation', () => {
   expect(foundation).toEqual({ md: 640, lg: 1024 });
 });
 
+test('pico', () => {
+  expect(pico).toEqual({ sm: 576, md: 768, lg: 992, xl: 1200 });
+});
+
 describe('queries', () => {
   test.each([
     ['default', def, bootstrapQueries],
     ['bootstrap', bootstrap, bootstrapQueries],
     ['mantine', mantine, mantineQueries],
     ['foundation', foundation, foundationQueries],
+    ['pico', pico, picoQueries],
   ])('%s', (_name, numbers, queries) => {
     expect(queries).toEqual(
       Object.fromEntries(

@@ -28,3 +28,17 @@ export const foundationQueries = {
   md: '(min-width: 640px)',
   lg: '(min-width: 1024px)',
 };
+
+export const pico = {
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+};
+
+export const picoQueries = {
+  sm: '(min-width: 576px)',
+  md: '(min-width: 768px)',
+  lg: '(min-width: 992px)',
+  xl: '(min-width: 1200px)',
+};
