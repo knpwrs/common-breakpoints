@@ -1,6 +1,8 @@
 import def, {
   bootstrap,
   bootstrapQueries,
+  bulma,
+  bulmaQueries,
   foundation,
   foundationQueries,
   mantine,
@@ -32,6 +34,16 @@ test('pico', () => {
   expect(pico).toEqual({ sm: 576, md: 768, lg: 992, xl: 1200 });
 });
 
+test('bulma', () => {
+  expect(bulma).toEqual({
+    mobile: 0,
+    tablet: 769,
+    desktop: 1024,
+    widescreen: 1216,
+    fullhd: 1408,
+  });
+});
+
 describe('queries', () => {
   test.each([
     ['default', def, bootstrapQueries],
@@ -40,6 +52,7 @@ describe('queries', () => {
     ['tailwind', tailwind, tailwindQueries],
     ['foundation', foundation, foundationQueries],
     ['pico', pico, picoQueries],
+    ['bulma', bulma, bulmaQueries],
   ])('%s', (_name, numbers, queries) => {
     expect(queries).toEqual(
       Object.fromEntries(

@@ -58,3 +58,19 @@ export const picoQueries = {
   lg: '(min-width: 992px)',
   xl: '(min-width: 1200px)',
 };
+
+export const bulma = {
+  mobile: 0,
+  tablet: 769,
+  desktop: 1024,
+  widescreen: 1216,
+  fullhd: 1408,
+};
+
+export const bulmaQueries = {
+  mobile: '(min-width: 0px)',
+  tablet: '(min-width: 769px)',
+  desktop: '(min-width: 1024px)',
+  widescreen: '(min-width: 1216px)',
+  fullhd: '(min-width: 1408px)',
+};
