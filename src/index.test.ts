@@ -1,4 +1,11 @@
-import def, { bootstrap, bootstrapQueries, mantine, mantineQueries } from './';
+import def, {
+  bootstrap,
+  bootstrapQueries,
+  foundation,
+  foundationQueries,
+  mantine,
+  mantineQueries,
+} from './';
 
 test('default export', () => {
   expect(def).toEqual({ lg: 960, md: 720, sm: 540, xl: 1140, xxl: 1320 });
@@ -7,7 +14,10 @@ test('default export', () => {
 
 test('mantine matches bootstrap', () => {
   expect(mantine).toBe(bootstrap);
-  expect(mantineQueries).toBe(bootstrapQueries);
+});
+
+test('foundation', () => {
+  expect(foundation).toEqual({ md: 640, lg: 1024 });
 });
 
 describe('queries', () => {
@@ -15,6 +25,7 @@ describe('queries', () => {
     ['default', def, bootstrapQueries],
     ['bootstrap', bootstrap, bootstrapQueries],
     ['mantine', mantine, mantineQueries],
+    ['foundation', foundation, foundationQueries],
   ])('%s', (_name, numbers, queries) => {
     expect(queries).toEqual(
       Object.fromEntries(

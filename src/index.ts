@@ -18,3 +18,13 @@ export const bootstrapQueries = {
 
 export const mantine = bootstrap;
 export const mantineQueries = bootstrapQueries;
+
+export const foundation = {
+  md: 640,
+  lg: 1024,
+};
+
+export const foundationQueries = {
+  md: '(min-width: 640px)',
+  lg: '(min-width: 1024px)',
+};
