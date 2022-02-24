@@ -8,6 +8,7 @@
     "build": "run-s build:*",
     "build:cjs": "tsc --module commonjs --outDir dist/commonjs",
     "build:esnext": "tsc --module esnext --outDir dist/esnext",
+    "check": "prettier --check src/**/*.ts",
     "test": "jest",
     "test:watch": "jest --watch"
   },
