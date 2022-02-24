@@ -15,3 +15,6 @@ export const bootstrapQueries = {
   xl: '(min-width: 1140px)',
   xxl: '(min-width: 1320px)',
 };
+
+export const mantine = bootstrap;
+export const mantineQueries = bootstrapQueries;
