@@ -35,6 +35,22 @@ export const tailwindQueries = {
   xxl: '(min-width: 1536px)',
 };
 
+export const mui = {
+  xs: 0,
+  sm: 600,
+  md: 900,
+  lg: 1200,
+  xl: 1536,
+};
+
+export const muiQueries = {
+  xs: '(min-width: 0px)',
+  sm: '(min-width: 600px)',
+  md: '(min-width: 900px)',
+  lg: '(min-width: 1200px)',
+  xl: '(min-width: 1536px)',
+};
+
 export const foundation = {
   md: 640,
   lg: 1024,

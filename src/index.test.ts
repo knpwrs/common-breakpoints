@@ -7,6 +7,8 @@ import def, {
   foundationQueries,
   mantine,
   mantineQueries,
+  mui,
+  muiQueries,
   pico,
   picoQueries,
   tailwind,
@@ -24,6 +26,10 @@ test('mantine matches bootstrap', () => {
 
 test('tailwind', () => {
   expect(tailwind).toEqual({ sm: 640, md: 768, lg: 1024, xl: 1280, xxl: 1536 });
+});
+
+test('mui', () => {
+  expect(mui).toEqual({ xs: 0, sm: 600, md: 900, lg: 1200, xl: 1536 });
 });
 
 test('foundation', () => {
@@ -50,6 +56,7 @@ describe('queries', () => {
     ['bootstrap', bootstrap, bootstrapQueries],
     ['mantine', mantine, mantineQueries],
     ['tailwind', tailwind, tailwindQueries],
+    ['mui', mui, muiQueries],
     ['foundation', foundation, foundationQueries],
     ['pico', pico, picoQueries],
     ['bulma', bulma, bulmaQueries],
