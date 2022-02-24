@@ -8,14 +8,22 @@
     "build": "run-s build:*",
     "build:cjs": "tsc --module commonjs --outDir dist/commonjs",
     "build:esnext": "tsc --module esnext --outDir dist/esnext",
+    "clean": "rimraf dist",
     "check": "prettier --check src/**/*.ts",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepack": "run-s clean build",
+    "publish:major": "np major",
+    "publish:minor": "np minor",
+    "publish:patch": "np patch"
   },
   "jest": {
     "transform": {
       "\\.tsx?$": "ts-jest"
-    }
+    },
+    "testPathIgnorePatterns": [
+      "dist"
+    ]
   },
   "repository": {
     "type": "git",
@@ -34,8 +42,10 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
+    "np": "^7.6.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.1.3",
     "typescript": "^4.5.5"
   }
