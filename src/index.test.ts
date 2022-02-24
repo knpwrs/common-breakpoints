@@ -33,7 +33,7 @@ test('mui', () => {
 });
 
 test('foundation', () => {
-  expect(foundation).toEqual({ md: 640, lg: 1024 });
+  expect(foundation).toEqual({ small: 0, medium: 640, large: 1024 });
 });
 
 test('pico', () => {

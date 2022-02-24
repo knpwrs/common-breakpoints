@@ -52,13 +52,15 @@ export const muiQueries = {
 };
 
 export const foundation = {
-  md: 640,
-  lg: 1024,
+  small: 0,
+  medium: 640,
+  large: 1024,
 };
 
 export const foundationQueries = {
-  md: '(min-width: 640px)',
-  lg: '(min-width: 1024px)',
+  small: '(min-width: 0px)',
+  medium: '(min-width: 640px)',
+  large: '(min-width: 1024px)',
 };
 
 export const pico = {
