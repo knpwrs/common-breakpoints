@@ -1,6 +1,6 @@
 {
   "name": "common-breakpoints",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A package exporting common breakpoints from popular CSS frameworks for use in CSS-in-JS libraries.",
   "main": "dist/commonjs/index.js",
   "module": "dist/esnext/index.js",
