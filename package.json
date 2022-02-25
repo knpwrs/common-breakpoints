@@ -11,8 +11,8 @@
     "build:esnext": "tsc --module esnext --outDir dist/esnext",
     "clean": "rimraf dist",
     "check": "prettier --check src/**/*.ts",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "prepack": "run-s clean build",
     "publish:major": "np major",
     "publish:minor": "np minor",
@@ -24,7 +24,15 @@
     },
     "testPathIgnorePatterns": [
       "dist"
-    ]
+    ],
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -42,6 +50,9 @@
   "homepage": "https://github.com/knpwrs/common-breakpoints#readme",
   "devDependencies": {
     "@types/jest": "^27.4.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.14.23",
+    "execa": "^6.1.0",
     "jest": "^27.5.1",
     "np": "^7.6.0",
     "npm-run-all": "^4.1.5",

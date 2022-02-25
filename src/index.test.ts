@@ -1,3 +1,6 @@
+import { execa } from 'execa';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import def, {
   bootstrap,
   bootstrapQueries,
@@ -70,4 +73,28 @@ describe('queries', () => {
       ),
     );
   });
+});
+
+test('tree shaking', async () => {
+  const output = await execa('npx', [
+    'esbuild',
+    '--bundle',
+    join(dirname(fileURLToPath(import.meta.url)), '__fixtures__', 'entry.ts'),
+  ]);
+  expect(output.stdout).toMatchInlineSnapshot(`
+    "(() => {
+      // src/queries/bootstrap.ts
+      var bootstrap_default = {
+        sm: \\"(min-width: 540px)\\",
+        md: \\"(min-width: 720px)\\",
+        lg: \\"(min-width: 960px)\\",
+        xl: \\"(min-width: 1140px)\\",
+        xxl: \\"(min-width: 1320px)\\"
+      };
+
+      // src/__fixtures__/entry.ts
+      console.log(bootstrap_default);
+      console.log(bootstrap_default);
+    })();"
+  `);
 });
