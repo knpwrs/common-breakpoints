@@ -1,5 +1,4 @@
 .github
 .prettier*
 node_modules
-dist/**/*.test.*
 src
