@@ -49,6 +49,7 @@
   },
   "homepage": "https://github.com/knpwrs/common-breakpoints#readme",
   "devDependencies": {
+    "@tsconfig/node16-strictest-esm": "^1.0.0",
     "@types/jest": "^27.4.1",
     "cross-env": "^7.0.3",
     "esbuild": "^0.14.23",
