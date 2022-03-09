@@ -6,6 +6,7 @@
   "main": "dist/commonjs/index.js",
   "module": "dist/esnext/index.js",
   "types": "dist/esnext/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
     "build:cjs": "tsc --module commonjs --outDir dist/commonjs",
